@@ -38,6 +38,9 @@
 			</tr>
 		</tbody>
 	</table>
+	<blockquote>
+		<p><small>More coming soon...</small></p>
+	</blockquote>
 </template>
 
 <script>
