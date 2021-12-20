@@ -1,0 +1,144 @@
+html,
+body {
+	display: block;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #e2e4e8;
+	font-family: mr-eaves-modern, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+blockquote {
+	font-family: mr-eaves-sans, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: 0;
+	text-align: center;
+	z-index: 999;
+	color: #fff;
+	padding-top: 10vh;
+	font-size: 1.1em;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+header .logo {
+	/* font-size: 1.7em; */
+	display: inline-block;
+	margin: 0 auto 0.5em;
+	text-align: center;
+	width: 1.5rem;
+}
+.logo svg {
+	width: 100%;
+	display: block;
+	overflow: visible;
+}
+.logo path {
+	fill: #fff;
+}
+header h1 {
+	font-weight: 300;
+	font-size: 4em;
+	margin: 0 auto;
+	line-height: 1;
+}
+blockquote,
+header h2 {
+	font-family: mr-eaves-sans, sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 1.6em;
+	margin: 0 auto;
+}
+h3 {
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 0.9em;
+	font-weight: 400;
+	margin: 1em auto 2em;
+}
+.text-block > p {
+	font-size: 1.1em;
+	line-height: 1.4;
+	text-align: left;
+	width: 100%;
+	max-width: 50rem;
+	margin: 0 auto;
+}
+blockquote {
+	font-weight: 100;
+	font-size: 1.4em;
+	line-height: 1.6;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 27em;
+}
+blockquote p {
+	text-align: center;
+}
+pre {
+	position: relative;
+	width: 100%;
+	display: block;
+	margin: 0.8rem auto 2.5rem;
+	/* padding: 1.5rem 2rem; */
+	line-height: 1.8;
+	max-width: 50rem;
+	overflow-x: scroll;
+	/* background: rgba(0, 0, 0, 0.05); */
+	background: rgba(255, 255, 255, 0.35);
+}
+code {
+	background: rgba(255, 255, 255, 0.35);
+	padding: 0.2em 0.4em;
+	font-size: 0.9em;
+}
+pre,
+code {
+	text-align: left;
+	text-indent: 0;
+	white-space: normal;
+}
+code > span {
+	display: block;
+	white-space: nowrap;
+}
+pre code {
+	background-color: transparent;
+	font-size: 1em;
+	width: auto;
+	min-width: 100%;
+	display: block;
+	padding: 1.5rem 2rem;
+}
+pre code::before {
+	content: "LANG";
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: mr-eaves-sans, sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	font-size: 0.5em;
+	padding: 0.2em 0.6em 0.3em;
+	line-height: 1;
+	background: rgba(0, 0, 0, 1);
+	color: #fff;
+}
+.language-html::before {
+	content: "HTML";
+}
+.language-js::before {
+	content: "SCRIPT";
+}
+.language-css::before {
+	content: "CSS";
+}
