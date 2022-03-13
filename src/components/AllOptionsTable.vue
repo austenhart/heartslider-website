@@ -89,6 +89,11 @@ td {
 }
 tr {
 	vertical-align: top;
+	transition: background-color 0.45s ease-in-out;
+}
+tr:hover {
+	background: #f5f5f5;
+	transition: background-color 0.15s ease-in-out;
 }
 table p {
 	margin-top: 0;
