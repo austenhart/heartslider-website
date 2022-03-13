@@ -25,10 +25,17 @@
 </template>
 
 <script>
-// import * as heartsliderjs from "../assets/scripts/heartslider.min.js";
 export default {
 	mounted() {
-		new HeartSlider();
+		const heartsliderjs = "../src/assets/scripts/heartslider.min.js";
+		const tag = document.createElement("script");
+		tag.setAttribute("type", "text/javascript");
+		tag.setAttribute("src", heartsliderjs);
+		tag.setAttribute("async", "");
+		tag.onload = () => {
+			new HeartSlider();
+		};
+		document.head.appendChild(tag);
 	},
 };
 </script>
