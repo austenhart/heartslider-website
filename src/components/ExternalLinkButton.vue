@@ -55,6 +55,7 @@ a {
 	letter-spacing: 0.1em;
 	font-size: 0.7em;
 	width: 7em;
+	width: 16ch;
 	text-align: center;
 	transition: color 0.4s ease-in;
 }

@@ -6,7 +6,6 @@ import "./assets/styles/main.css";
 /* HighlightJS */
 import "highlight.js/styles/stackoverflow-light.css";
 // import "highlight.js/lib/common";
-// import "highlight.js/lib/common";
 // import hljsVuePlugin from "@highlightjs/vue-plugin";
 
 // Vue.use(VueHighlightJS);
