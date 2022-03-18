@@ -2,6 +2,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./assets/styles/main.css";
+/* HeartSlider */
+// import "/node_modules/heartslider/dist/heartslider.min.js";
 
 /* HighlightJS */
 import "highlight.js/styles/stackoverflow-light.css";
