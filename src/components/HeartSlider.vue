@@ -1,5 +1,5 @@
 <template>
-	<div class="heart-slideshow">
+	<div id="homepage-slideshow" class="heart-slideshow">
 		<div class="heart-slide">
 			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-03.jpg" alt="" /></figure>
 		</div>

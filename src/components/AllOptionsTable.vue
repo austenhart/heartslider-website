@@ -36,11 +36,104 @@
 				</td>
 				<td><code>3000</code></td>
 			</tr>
+			<tr>
+				<td><code>manualTransition</code></td>
+				<td><p>The duration of the fade effect during a swipe or click.</p></td>
+				<td>
+					<p>Number, in milliseconds.</p>
+				</td>
+				<td><code>200</code></td>
+			</tr>
+			<tr>
+				<td><code>delay</code></td>
+				<td><p>The amount of time to wait before starting the transition to the next slide.</p></td>
+				<td>
+					<p>Number, in milliseconds.</p>
+				</td>
+				<td><code>1000</code></td>
+			</tr>
+			<tr>
+				<td><code>loop</code></td>
+				<td><p>Tells the slideshow to restart at the beginning once reaching the final slide.</p></td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>true</code></td>
+			</tr>
+			<tr>
+				<td><code>randomize</code></td>
+				<td><p>Selects a random slide to start from. Does not shuffle the order of slides.</p></td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>true</code></td>
+			</tr>
+			<tr>
+				<td><code>paused</code></td>
+				<td><p>If set to true, the slideshow will not auto-play.</p></td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>false</code></td>
+			</tr>
+			<tr>
+				<td><code>effect</code></td>
+				<td>
+					<p>Two options for the easing applied to the fade. Using <code>FadeOut</code> will smoothly crossfade from one slide to the next. Using <code>FadeInOut</code> will make the current slide completely fade out before fading in the new one.</p>
+				</td>
+				<td>
+					<p>
+						String;<br />
+						<code>FadeOut</code> or <code>FadeInOut</code>
+					</p>
+				</td>
+				<td><code>FadeOut</code></td>
+			</tr>
+			<tr>
+				<td><code>buttons</code></td>
+				<td>
+					<p>If true, will create previous / next buttons using the <code>heart-prev</code> and <code>heart-next</code> classes. Buttons can be customized with CSS.</p>
+				</td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>false</code></td>
+			</tr>
+			<tr>
+				<td><code>swipe</code></td>
+				<td>
+					<p>Allows the slideshow to be manually controlled with swipe gestures on touch devices.</p>
+				</td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>true</code></td>
+			</tr>
+			<tr>
+				<td><code>clickToAdvance</code></td>
+				<td>
+					<p>Allows the slideshow to be manually advanced with a click or tap.</p>
+				</td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>false</code></td>
+			</tr>
+			<tr>
+				<td><code>pauseOnInactiveWindow</code></td>
+				<td>
+					<p>Will pause the slideshow while the website is not in the active window.</p>
+				</td>
+				<td>
+					<p>Boolean</p>
+				</td>
+				<td><code>false</code></td>
+			</tr>
 		</tbody>
 	</table>
-	<blockquote>
+	<!-- <blockquote>
 		<p><small>More coming soon...</small></p>
-	</blockquote>
+	</blockquote> -->
 </template>
 
 <script>

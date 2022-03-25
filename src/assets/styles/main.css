@@ -5,12 +5,12 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #e2e4e8;
-	font-family: mr-eaves-modern, sans-serif;
+	font-family: mr-eaves-modern, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-weight: 300;
 	font-style: normal;
 }
 blockquote {
-	font-family: mr-eaves-sans, sans-serif;
+	font-family: mr-eaves-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-weight: 300;
 	font-style: normal;
 }
@@ -51,7 +51,7 @@ header h1 {
 }
 blockquote,
 header h2 {
-	font-family: mr-eaves-sans, sans-serif;
+	font-family: mr-eaves-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-weight: 400;
 	font-style: italic;
 	font-size: 1.6em;
@@ -97,7 +97,8 @@ pre {
 }
 code {
 	background: rgba(255, 255, 255, 0.35);
-	padding: 0.2em 0.4em;
+	/* padding: 0.2em 0.4em; */
+	padding: 0.2em 0;
 	font-size: 0.9em;
 }
 pre,
@@ -106,18 +107,21 @@ code {
 	text-indent: 0;
 	white-space: normal;
 }
-code > span {
+/* code > span {
 	display: block;
 	white-space: nowrap;
-}
-pre code {
+} */
+pre code,
+pre code.hljs.hljs {
+	white-space: pre;
+	tab-size: 2.5em;
 	background-color: transparent;
 	font-size: 1em;
 	width: auto;
 	min-width: 100%;
 	min-width: min-content;
 	display: block;
-	padding: 1.5rem 3rem 1.5rem 2rem;
+	padding: 1.35rem 3rem 0.9rem 1.5rem;
 }
 pre code::before {
 	content: "LANG";
@@ -125,7 +129,7 @@ pre code::before {
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: mr-eaves-sans, sans-serif;
+	font-family: mr-eaves-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.1em;
 	font-size: 0.5em;
@@ -134,12 +138,16 @@ pre code::before {
 	background: rgba(0, 0, 0, 1);
 	color: #fff;
 }
+pre code.html::before,
+.language-xml::before,
 .language-html::before {
 	content: "HTML";
 }
+pre code.javascript::before,
 .language-js::before {
 	content: "SCRIPT";
 }
+pre code.css::before,
 .language-css::before {
 	content: "CSS";
 }
