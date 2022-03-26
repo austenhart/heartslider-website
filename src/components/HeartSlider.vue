@@ -1,25 +1,25 @@
 <template>
 	<div id="homepage-slideshow" class="heart-slideshow">
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-03.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-03.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-01.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-01.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-02.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-02.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-04.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-04.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-05.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-05.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-06.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-06.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
-			<figure class="image-holder"><img data-src="../src/assets/homepage/heart-slide-07.jpg" alt="" /></figure>
+			<figure class="image-holder"><img data-src="/homepage/heart-slide-07.jpg" alt="" /></figure>
 		</div>
 	</div>
 </template>
