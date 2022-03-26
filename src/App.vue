@@ -206,6 +206,8 @@ html {
 }
 .text-block.table-row {
 	max-width: 80em;
+	padding: 0;
+	box-sizing: border-box;
 }
 @media screen and (min-width: 70em) {
 	.text-block.table-row {
