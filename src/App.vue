@@ -84,6 +84,19 @@ import Footer from "./components/Footer.vue";
 		<div class="text-block">
 			<h3>Actions</h3>
 			<p>Declare the slideshow as a constant, then you can use the <code>next()</code> and <code>prev()</code> methods to manually advance the slideshow. Use <code>pause()</code> and <code>resume()</code> to stop or start autoplay.</p>
+			<pre>
+				<code>const myHomepageSlideshow = new HeartSlider();
+
+// Pause
+myHomepageSlideshow.pause();
+// Resume
+myHomepageSlideshow.resume();
+
+// Next Slide
+myHomepageSlideshow.next();
+// Previous Slide
+myHomepageSlideshow.prev();</code>
+			</pre>
 			<highlightjs
 				language="javascript"
 				code="const myHomepageSlideshow = new HeartSlider();
@@ -152,13 +165,14 @@ html {
 #intro {
 	position: relative;
 	height: 100vh;
-	max-height: 100dvh;
+	max-height: 100svh;
 	background: #242424;
 }
 .scroll-instruct,
 #button-holder {
 	position: absolute;
 	top: calc(100vh - 120px);
+	top: calc(100svh - 120px);
 	right: 0;
 	bottom: auto;
 	left: 0;
@@ -167,6 +181,7 @@ html {
 .scroll-instruct {
 	position: absolute;
 	top: calc(100vh - 50px);
+	top: calc(100svh - 50px);
 	right: 0;
 	bottom: auto;
 	left: 0;

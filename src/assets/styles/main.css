@@ -143,16 +143,16 @@ pre code::before {
 	background: rgba(0, 0, 0, 1);
 	color: #fff;
 }
-pre code.html::before,
+pre code.language-html::before,
 .language-xml::before,
 .language-html::before {
 	content: "HTML";
 }
-pre code.javascript::before,
+pre code.language-javascript::before,
 .language-js::before {
 	content: "SCRIPT";
 }
-pre code.css::before,
+pre code.language-css::before,
 .language-css::before {
 	content: "CSS";
 }
