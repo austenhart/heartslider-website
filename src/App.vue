@@ -50,16 +50,21 @@ import Footer from "./components/Footer.vue";
 </div>'
 			/>
 			<p>Finally, initiate the slideshow with a new HeartSlider class and set your options in your javascript file.</p>
-			<pre><code>new HeartSlider({
+			<highlightjs
+				language="javascript"
+				code='new HeartSlider({
 	slideshow: ".heart-slideshow",
 	slides: ".heart-slide",
 	transition: 3000,
 	delay: 1000,
-});</code></pre>
+});'
+			/>
 		</div>
 		<div class="text-block">
 			<h3>Default Options</h3>
-			<pre><code>new HeartSlider({
+			<highlightjs
+				language="javascript"
+				code='new HeartSlider({
 	slideshow: ".heart-slideshow",
 	slides: ".heart-slide",
 	transition: 3000,
@@ -73,24 +78,12 @@ import Footer from "./components/Footer.vue";
 	swipe: true,
 	clickToAdvance: false,
 	pauseOnInactiveWindow: false,
-});</code></pre>
+});'
+			/>
 		</div>
 		<div class="text-block">
 			<h3>Actions</h3>
 			<p>Declare the slideshow as a constant, then you can use the <code>next()</code> and <code>prev()</code> methods to manually advance the slideshow. Use <code>pause()</code> and <code>resume()</code> to stop or start autoplay.</p>
-			<pre>
-				<code>const myHomepageSlideshow = new HeartSlider();
-
-// Pause
-myHomepageSlideshow.pause();
-// Resume
-myHomepageSlideshow.resume();
-
-// Next Slide
-myHomepageSlideshow.next();
-// Previous Slide
-myHomepageSlideshow.prev();</code>
-			</pre>
 			<highlightjs
 				language="javascript"
 				code="const myHomepageSlideshow = new HeartSlider();

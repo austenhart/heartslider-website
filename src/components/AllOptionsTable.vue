@@ -168,6 +168,11 @@ tbody {
 table code {
 	white-space: nowrap;
 	background: transparent;
+	padding: 0;
+}
+table th > code,
+table td > code {
+	font-size: 0.8rem;
 }
 td,
 th {
