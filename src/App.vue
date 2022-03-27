@@ -50,21 +50,16 @@ import Footer from "./components/Footer.vue";
 </div>'
 			/>
 			<p>Finally, initiate the slideshow with a new HeartSlider class and set your options in your javascript file.</p>
-			<highlightjs
-				language="javascript"
-				code='new HeartSlider({
+			<pre><code>new HeartSlider({
 	slideshow: ".heart-slideshow",
 	slides: ".heart-slide",
 	transition: 3000,
 	delay: 1000,
-});'
-			/>
+});</code></pre>
 		</div>
 		<div class="text-block">
 			<h3>Default Options</h3>
-			<highlightjs
-				language="javascript"
-				code='new HeartSlider({
+			<pre><code>new HeartSlider({
 	slideshow: ".heart-slideshow",
 	slides: ".heart-slide",
 	transition: 3000,
@@ -78,8 +73,7 @@ import Footer from "./components/Footer.vue";
 	swipe: true,
 	clickToAdvance: false,
 	pauseOnInactiveWindow: false,
-});'
-			/>
+});</code></pre>
 		</div>
 		<div class="text-block">
 			<h3>Actions</h3>
@@ -140,7 +134,12 @@ myHomepageSlideshow.on("transitionEnd", function (slideshow, slideshowElement, c
 <script>
 export default {
 	mounted() {
-		document.querySelectorAll("pre code").forEach((el) => {
+		document.querySelectorAll("pre code:not(.hljs)").forEach((el) => {
+			hljs.highlightElement(el);
+		});
+	},
+	updated() {
+		document.querySelectorAll("pre code:not(.hljs)").forEach((el) => {
 			hljs.highlightElement(el);
 		});
 	},
