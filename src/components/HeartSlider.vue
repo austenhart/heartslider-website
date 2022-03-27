@@ -58,4 +58,7 @@ export default {
 <style>
 /* @import "../assets/styles/heartslider.min.css"; */
 @import "/node_modules/heartslider/dist/heartslider.min.css";
+.heart-slideshow {
+	max-height: 100dvh;
+}
 </style>

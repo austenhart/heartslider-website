@@ -127,7 +127,6 @@ myHomepageSlideshow.on("transitionEnd", function (slideshow, slideshowElement, c
 <script>
 export default {
 	mounted() {
-		// const codeSnippets = document.querySelectorAll("pre code");
 		document.querySelectorAll("pre code").forEach((el) => {
 			hljs.highlightElement(el);
 		});
@@ -153,6 +152,7 @@ html {
 #intro {
 	position: relative;
 	height: 100vh;
+	max-height: 100dvh;
 	background: #242424;
 }
 .scroll-instruct,
