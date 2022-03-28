@@ -1,6 +1,6 @@
 <template>
 	<footer>
-		<p>All photography and code has been created and maintained by Austen Hart, in Philadelphia.</p>
+		<p>All photography and code has been created and maintained by Austen&nbsp;Hart, in Philadelphia.</p>
 		<p>All rights reserved.</p>
 	</footer>
 </template>

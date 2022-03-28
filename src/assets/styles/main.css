@@ -229,15 +229,18 @@ pre code::before {
 	color: #fff;
 }
 pre code.language-html::before,
+.hljs.xml::before,
 .language-xml::before,
 .language-html::before {
 	content: "HTML";
 }
 pre code.language-javascript::before,
+.hljs.javascript::before,
 .language-js::before {
 	content: "SCRIPT";
 }
 pre code.language-css::before,
+.hljs.css::before,
 .language-css::before {
 	content: "CSS";
 }
