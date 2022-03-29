@@ -76,6 +76,8 @@ select {
 html,
 body {
 	font-size: 15px;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 html,
