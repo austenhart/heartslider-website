@@ -112,7 +112,6 @@ header {
 	-webkit-font-smoothing: antialiased;
 }
 header .logo {
-	/* font-size: 1.7em; */
 	display: inline-block;
 	margin: 0 auto 0.5em;
 	text-align: center;
@@ -175,14 +174,14 @@ pre {
 	line-height: 1.8;
 	max-width: 50rem;
 	overflow-x: scroll;
-	font-size: 1rem;
+	font-size: 0.55rem;
 	/* background: rgba(0, 0, 0, 0.05); */
 	background: rgba(255, 255, 255, 0.35);
 }
 code {
 	/* padding: 0.2em 0.4em; */
 	padding: 0.2em 0;
-	font-size: 0.85rem;
+	font-size: 1em;
 	/* font-size: 0.8em; */
 }
 p code {
@@ -202,7 +201,7 @@ code {
 } */
 pre code,
 pre code.hljs.hljs {
-	font-size: 0.85rem;
+	font-size: 1em;
 	white-space: pre;
 	tab-size: 2.5em;
 	background-color: transparent;
