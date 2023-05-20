@@ -130,6 +130,18 @@
 					</td>
 					<td><code>false</code></td>
 				</tr>
+				<tr>
+					<td><code>progressIndicators</code></td>
+					<td>
+						<p>Adds markers at the bottom of the page to show the slideshow progress.</p>
+					</td>
+					<td>
+						<p>Object</p>
+					</td>
+					<td>
+						<code>{ <br />type: "dot", <br />clickable: true, <br />color: "#fff", <br />}</code>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -167,6 +179,7 @@ tbody {
 }
 table code {
 	white-space: nowrap;
+	white-space: pre-line;
 	background: transparent;
 	padding: 0;
 }

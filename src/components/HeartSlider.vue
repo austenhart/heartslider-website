@@ -36,7 +36,11 @@ export default {
 	// },
 	mounted() {
 		// console.log(HeartSlider);
-		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.3.2/dist/heartslider.min.js";
+		const heartslidercss = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@latest/dist/heartslider.min.css";
+		const hsStyle = document.createElement("link");
+		hsStyle.rel = "stylesheet";
+		hsStyle.href = heartslidercss;
+		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@latest/dist/heartslider.min.js";
 		const tag = document.createElement("script");
 		tag.setAttribute("type", "text/javascript");
 		tag.setAttribute("src", heartsliderjs);
@@ -45,6 +49,7 @@ export default {
 			new HeartSlider();
 		};
 		document.head.appendChild(tag);
+		document.head.appendChild(hsStyle);
 		// new HeartSlider();
 		// if (typeof HeartSlider === "function") {
 		// 	new HeartSlider();
@@ -57,7 +62,7 @@ export default {
 
 <style>
 /* @import "../assets/styles/heartslider.min.css"; */
-@import "/node_modules/heartslider/dist/heartslider.min.css";
+/* @import "/node_modules/heartslider/dist/heartslider.min.css"; */
 .heart-slideshow {
 	max-height: 100svh;
 }

@@ -78,6 +78,11 @@ import Footer from "./components/Footer.vue";
 	swipe: true,
 	clickToAdvance: false,
 	pauseOnInactiveWindow: false,
+	progressIndicators: {
+		type: "dash", // or "dot"
+		clickable: true,
+		color: "#fff",
+	},
 });'
 			/>
 		</div>
@@ -101,18 +106,24 @@ myHomepageSlideshow.prev();"
 		</div>
 		<div class="text-block">
 			<h3>Events</h3>
+			<p>
+				Currently, there are three callback events that you can use to hook into the slideshows. The <code>transitionStart</code> event will happen immediately as a new slide begins to transition in, the <code>transitionEnd</code> will happen at the end of that transition, and the
+				<code>firstImageLoad</code> event will trigger when the image in the first slide finishes loading.
+			</p>
 			<highlightjs
 				language="javascript"
 				code='const myHomepageSlideshow = new HeartSlider();
 					
 // Events
 myHomepageSlideshow.on("transitionStart", function (slideshow, slideshowElement, currentSlide) {
-	/* Code that runs on the START of each transition goes here */
+	/* Code that runs on the START of each new slide goes here */
 	console.log({ slideshow }, { slideshowElement }, { currentSlide });
 });
 myHomepageSlideshow.on("transitionEnd", function (slideshow, slideshowElement, currentSlide) {
 	/* Code that runs at the END of each transition goes here */
-	console.log({ slideshow }, { slideshowElement }, { currentSlide });
+});
+myHomepageSlideshow.on("firstImageLoad", function (slideshow, slideshowElement, currentSlide) {
+	document.body.classList.add("remove-intro");
 });'
 			/>
 		</div>
