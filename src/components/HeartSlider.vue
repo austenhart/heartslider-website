@@ -36,11 +36,11 @@ export default {
 	// },
 	mounted() {
 		// console.log(HeartSlider);
-		const heartslidercss = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@latest/dist/heartslider.min.css";
+		const heartslidercss = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.4.9/dist/heartslider.min.css";
 		const hsStyle = document.createElement("link");
 		hsStyle.rel = "stylesheet";
 		hsStyle.href = heartslidercss;
-		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@latest/dist/heartslider.min.js";
+		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.4.9/dist/heartslider.min.js";
 		const tag = document.createElement("script");
 		tag.setAttribute("type", "text/javascript");
 		tag.setAttribute("src", heartsliderjs);

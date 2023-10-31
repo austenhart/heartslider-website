@@ -214,12 +214,29 @@ tr {
 	transition: background-color 0.45s ease-in-out;
 }
 tr:hover {
-	background: #f5f5f5;
+	background: #f1f1f1;
 	transition: background-color 0.15s ease-in-out;
 }
 table p {
 	margin-top: 0;
 	max-width: 30em;
 	line-height: 1.5;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	thead,
+	thead tr:hover {
+		background: rgb(19, 23, 34);
+	}
+	tbody {
+		background: rgb(10, 12, 17);
+	}
+	tr:hover {
+		background: rgb(19, 23, 34);
+	}
+	td,
+	th {
+		border: 1px solid rgb(10, 12, 17);
+	}
 }
 </style>

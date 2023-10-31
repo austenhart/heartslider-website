@@ -238,3 +238,24 @@ pre code.language-css::before,
 .language-css::before {
 	content: "CSS";
 }
+
+@media screen and (prefers-color-scheme: dark) {
+	html,
+	body {
+		background: rgb(15, 17, 23);
+		color: rgb(200, 200, 200);
+	}
+	#intro {
+		background-color: rgba(0, 0, 0, 0.25);
+	}
+	pre {
+		/* background: rgba(0, 0, 0, 0.25); */
+		background: rgb(10, 12, 17);
+	}
+	p code {
+		background: rgba(255, 255, 255, 0.1);
+	}
+	.hljs {
+		color: #83a7cb !important;
+	}
+}
