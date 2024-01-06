@@ -80,15 +80,15 @@
 				<tr>
 					<td><code>effect</code></td>
 					<td>
-						<p>Two options for the easing applied to the fade. Using <code>FadeOut</code> will smoothly crossfade from one slide to the next. Using <code>FadeInOut</code> will make the current slide completely fade out before fading in the new one.</p>
+						<p>Two options for the easing applied to the fade. Using <code>fadeOut</code> will smoothly crossfade from one slide to the next. Using <code>fadeInOut</code> will make the current slide completely fade out before fading in the new one.</p>
 					</td>
 					<td>
 						<p>
 							String;<br />
-							<code>FadeOut</code> or <code>FadeInOut</code>
+							<code>fadeOut</code> or <code>fadeInOut</code>
 						</p>
 					</td>
-					<td><code>FadeOut</code></td>
+					<td><code>"fadeOut"</code></td>
 				</tr>
 				<tr>
 					<td><code>buttons</code></td>
