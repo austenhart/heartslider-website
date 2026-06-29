@@ -1,6 +1,9 @@
 <template>
 	<div id="homepage-slideshow" class="heart-slideshow">
 		<div class="heart-slide">
+			<figure class="image-holder"><img style="object-position: 35% 50%" data-src="/homepage/heart-slide-08.jpg" alt="" /></figure>
+		</div>
+		<div class="heart-slide">
 			<figure class="image-holder"><img data-src="/homepage/heart-slide-03.jpg" alt="" /></figure>
 		</div>
 		<div class="heart-slide">
@@ -36,11 +39,11 @@ export default {
 	// },
 	mounted() {
 		// console.log(HeartSlider);
-		const heartslidercss = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.4.9/dist/heartslider.min.css";
+		const heartslidercss = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.5.3/dist/heartslider.min.css";
 		const hsStyle = document.createElement("link");
 		hsStyle.rel = "stylesheet";
 		hsStyle.href = heartslidercss;
-		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.4.9/dist/heartslider.min.js";
+		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.5.3/dist/heartslider.min.js";
 		const tag = document.createElement("script");
 		tag.setAttribute("type", "text/javascript");
 		tag.setAttribute("src", heartsliderjs);
