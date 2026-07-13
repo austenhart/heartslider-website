@@ -465,17 +465,18 @@ table p {
 @media screen and (prefers-color-scheme: dark) {
 	thead,
 	thead tr:hover {
-		background: rgb(19, 23, 34);
+		background: #262833;
 	}
 	tbody {
-		background: rgb(10, 12, 17);
+		background: #1a1c24;
 	}
 	tr:hover {
-		background: rgb(19, 23, 34);
+		color: #fff;
+		background: #262833;
 	}
 	td,
 	th {
-		border: 1px solid rgb(10, 12, 17);
+		border: 1px solid #18191e;
 	}
 }
 </style>

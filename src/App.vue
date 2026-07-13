@@ -436,21 +436,24 @@ pre.install-snippet {
 	gap: 0.5rem;
 	border: 0;
 	outline: 0;
-	background: #fff;
+	background: rgba(255, 255, 255, 0.25);
+	color: rgba(127, 128, 132, 0.583);
 	border-radius: 0;
 	padding: 0.75em 1.2em;
 	cursor: pointer;
 	font: inherit;
-	color: rgb(104, 104, 104);
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	font-size: 0.7em;
 	transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
 }
+.version-pill:hover {
+	background: rgba(255, 255, 255, 0.85);
+}
 .version-pill.active {
-	background: #111;
-	color: #fff;
+	background: rgba(255, 255, 255, 1);
+	color: rgba(127, 128, 132, 1);
 }
 .version-pill .label {
 	font-size: 1em;
@@ -483,7 +486,41 @@ pre.install-snippet {
 }
 .version-links a {
 	color: inherit;
+	text-decoration-style: dotted;
+	text-decoration-color: #5e5e5e9a;
+	text-underline-offset: 0.2em;
 }
+.version-links a:hover {
+	color: #000;
+	text-decoration-color: #2f2f2f;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	.version-pill {
+		color: rgb(114, 115, 119);
+		background-color: rgb(24, 25, 31);
+	}
+	.version-pill:hover {
+		color: rgb(138, 142, 151);
+		background-color: rgba(72, 76, 90, 0.5);
+	}
+	.version-pill.active {
+		color: rgb(195, 198, 206);
+		background-color: rgb(72, 76, 90);
+	}
+	.version-links,
+	.version-note {
+		color: rgb(138, 140, 145);
+	}
+	.version-links a {
+		text-decoration-color: #5e5e5e9a;
+	}
+	.version-links a:hover {
+		color: #fff;
+		text-decoration-color: #a9a9a9;
+	}
+}
+
 .copy-code-button {
 	position: absolute;
 	top: 2px;

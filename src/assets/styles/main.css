@@ -256,12 +256,16 @@ pre code.language-bash::before,
 	}
 	pre {
 		/* background: rgba(0, 0, 0, 0.25); */
-		background: rgb(10, 12, 17);
+		/* background: rgb(10, 12, 17); */
+		background: rgb(24, 25, 31);
 	}
 	p code {
 		background: rgba(255, 255, 255, 0.1);
 	}
 	.hljs {
 		color: #83a7cb !important;
+	}
+	.hljs-attr {
+		color: #2e7eb6 !important;
 	}
 }

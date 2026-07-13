@@ -45,7 +45,6 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: rgb(104, 104, 104);
-	/* border-bottom: 2px solid; */
 	outline: 1px solid #fff;
 	padding: 0.75em 1.5em;
 	background: #fff;
