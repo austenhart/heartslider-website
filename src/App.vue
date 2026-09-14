@@ -92,6 +92,8 @@ import "heartslider/dist/heartslider.min.js";'
 	allowFullVideoPlayback: false,
 	buttons: false,
 	clickToAdvance: false,
+	keyboard: true,
+	label: "Slideshow",
 	debug: false,
 	delayStart: 0,
 	slideshow: ".heart-slideshow",
@@ -100,7 +102,7 @@ import "heartslider/dist/heartslider.min.js";'
 	manualTransition: 400,
 	delay: 1000,
 	loop: true,
-	randomize: false,
+	randomize: false, // or "start" / "all"
 	paused: false,
 	effect: "fadeOut",
 	pauseOnInactiveWindow: false,
@@ -109,6 +111,10 @@ import "heartslider/dist/heartslider.min.js";'
 	stackOnMobile: {
 		enable: false,
 		threshold: 768,
+	},
+	counter: {
+		enable: false,
+		separator: " / ",
 	},
 	progressIndicators: {
 		enable: false,
@@ -172,6 +178,85 @@ myHomepageSlideshow.on("firstImageLoad", function (slideshow, slideshowElement, 
 });'
 			/>
 		</div>
+		<div class="text-block" id="accessibility">
+			<h3>Accessibility</h3>
+			<p>
+				HeartSlider is accessible out of the box — none of this needs configuring. The slideshow is exposed as a labelled region, clickable progress indicators are real buttons with names like <em>Go to slide 3 of 8</em>, the active one is marked with <code>aria-current</code>, and keyboard
+				focus stays visible on every control.
+			</p>
+			<p>
+				With <code>keyboard</code> enabled the slideshow becomes focusable, so a keyboard user can tab to it and then use the left and right arrows to move a slide, or <code>Home</code> and <code>End</code> to jump to the first and last. Arrow presses are swallowed by the slideshow, so the
+				page will not scroll out from under it. Set <code>keyboard: false</code> to leave key handling to your own code.
+			</p>
+			<highlightjs
+				language="javascript"
+				code='new HeartSlider({
+	// Left / Right move one slide, Home / End jump to the ends.
+	keyboard: true,
+
+	// The name a screen reader announces for the slideshow.
+	// Skipped if your element already has its own aria-label.
+	label: "Photos from the 2026 collection",
+
+	// Clickable indicators are buttons, each with an accessible name.
+	progressIndicators: {
+		type: "dot",
+		clickable: true,
+	},
+});'
+			/>
+			<p>
+				Anyone who has asked their system for less motion gets the slideshow without the cross-fade: slides still change on the same schedule, they just swap instantly instead of animating. This is handled in CSS via
+				<code>prefers-reduced-motion</code>, so it needs nothing from you.
+			</p>
+		</div>
+		<div class="text-block" id="styling">
+			<h3>Styling with CSS</h3>
+			<p>Everything HeartSlider draws is sized relative to the <em>slideshow</em> rather than the viewport, so a slideshow sitting in a narrow column spaces its controls just like a full-bleed one. Reach for these custom properties rather than overriding the rules themselves.</p>
+			<p>
+				Indicator spacing is proportional: each indicator takes an equal slot — the track width divided by the number of slides — and <code>--gap-ratio</code> sets the gap as a fraction of one slot. Because the gap scales with the slot, spacing stays sensible whether there are three slides
+				or thirty. Set <code>--indicator-gap</code> instead if you would rather give an absolute value.
+			</p>
+			<highlightjs
+				language="css"
+				code="/* Progress indicators */
+.progress-container {
+	--gap-ratio: 0.4; /* gap as a fraction of one indicator slot */
+	--track-width: 60%; /* track width, relative to the slideshow */
+	--track-max-width: none; /* cap the track, or none to fill the width */
+	--indicator-color: #fff;
+}
+
+/* Dots keep a fixed size, so their spacing comes from the slot.
+   Widen the track to spread them further apart. */
+.progress-container.type-dot {
+	--dot-size: 6px;
+	--track-max-width: calc(var(--dot-size) * 6 * var(--total));
+}
+
+/* Previous / next arrows */
+.heart-prev,
+.heart-next {
+	--arrow-inset: 4em; /* distance in from the slideshow edge */
+	--arrow-size: 1.35em;
+	--arrow-color: #fff;
+}
+
+/* Slide counter */
+.heart-counter {
+	--counter-color: #fff;
+	--counter-size: 0.875rem;
+	--counter-opacity: 0.8;
+}
+
+/* Keyboard focus ring */
+.heart-slideshow {
+	--focus-ring-color: #fff;
+	--focus-ring-width: 2px;
+}"
+			/>
+			<p><code>--total</code> is written to the indicator container by HeartSlider and holds the number of slides — useful inside your own <code>calc()</code>, as above, but treat it as read-only.</p>
+		</div>
 		<div class="text-block table-row">
 			<h3>All Options</h3>
 			<AllOptionsTable />
@@ -185,9 +270,11 @@ export default {
 	data() {
 		return {
 			selectedVersionSource: "github",
+			/* Shown only if the live version lookup fails; overwritten by
+			   fetchLatestVersions() on mount. Keep in step with the newest release. */
 			versions: {
-				github: "3.5.3",
-				npm: "3.5.3",
+				github: "3.6.0",
+				npm: "3.6.0",
 			},
 		};
 	},
@@ -209,7 +296,7 @@ export default {
 			return this.selectedVersionSource === "npm" ? "npm" : "GitHub";
 		},
 		githubReleaseUrl() {
-			return `https://github.com/austenhart/heartslider/releases/tag/${this.versions.github}`;
+			return `https://github.com/austenhart/heartslider/releases/tag/v${this.versions.github}`;
 		},
 		npmPackageUrl() {
 			return `https://www.npmjs.com/package/heartslider/v/${this.versions.npm}`;
@@ -411,6 +498,11 @@ html {
 #docs {
 	padding: 4em 0;
 }
+/* Sections with more than one paragraph need the paragraphs held apart;
+   .text-block > p carries no bottom margin on its own. */
+.text-block > p + p {
+	margin-top: 1.2em;
+}
 .text-block {
 	margin: 2em auto 6em;
 	max-width: 60em;
@@ -446,7 +538,10 @@ pre.install-snippet {
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	font-size: 0.7em;
-	transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
+	transition:
+		color 0.2s ease-in,
+		background-color 0.2s ease-in,
+		border-color 0.2s ease-in;
 }
 .version-pill:hover {
 	background: rgba(255, 255, 255, 0.85);
@@ -538,7 +633,9 @@ pre.install-snippet {
 	border-radius: 0.2rem;
 	cursor: pointer;
 	color: #bfc2c6;
-	transition: transform 0.15s ease, color 0.15s ease;
+	transition:
+		transform 0.15s ease,
+		color 0.15s ease;
 	z-index: 5;
 }
 .copy-code-button:hover {

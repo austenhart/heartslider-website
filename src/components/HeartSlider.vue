@@ -39,11 +39,15 @@ export default {
 	// },
 	mounted() {
 		// console.log(HeartSlider);
-		const heartslidercss = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.5.3/dist/heartslider.min.css";
+		/* Floating major range: jsDelivr resolves this to the newest 3.x release, so
+		   the demo follows releases automatically and can never point at a missing tag. */
+		const heartsliderVersion = "3";
+		const heartsliderBase = `https://cdn.jsdelivr.net/gh/austenhart/heartslider@${heartsliderVersion}/dist`;
+		const heartslidercss = `${heartsliderBase}/heartslider.min.css`;
 		const hsStyle = document.createElement("link");
 		hsStyle.rel = "stylesheet";
 		hsStyle.href = heartslidercss;
-		const heartsliderjs = "https://cdn.jsdelivr.net/gh/austenhart/heartslider@3.5.3/dist/heartslider.min.js";
+		const heartsliderjs = `${heartsliderBase}/heartslider.min.js`;
 		const tag = document.createElement("script");
 		tag.setAttribute("type", "text/javascript");
 		tag.setAttribute("src", heartsliderjs);

@@ -79,9 +79,17 @@
 				</tr>
 				<tr>
 					<td><code>randomize</code></td>
-					<td><p>Selects a random slide to start from. Does not shuffle the order of slides.</p></td>
 					<td>
-						<p>Boolean</p>
+						<p>
+							Controls the playback order. <code>false</code> plays slides in document order. <code>"start"</code> (or <code>true</code>) picks a random first slide and then continues in order. <code>"all"</code> shuffles the whole running order — no slide
+							repeats back to back, and every slide plays once before the order reshuffles.
+						</p>
+					</td>
+					<td>
+						<p>
+							Boolean or String;<br />
+							<code>false</code>, <code>"start"</code>, or <code>"all"</code>
+						</p>
 					</td>
 					<td><code>false</code></td>
 				</tr>
@@ -137,6 +145,29 @@
 					<td><code>false</code></td>
 				</tr>
 				<tr>
+					<td><code>keyboard</code></td>
+					<td>
+						<p>
+							Lets viewers move between slides with the keyboard while focus is inside the slideshow. Left and right arrows move one slide; <code>Home</code> and <code>End</code> jump to the first and last. The slideshow is made focusable so keyboard users can
+							reach it.
+						</p>
+					</td>
+					<td>
+						<p>Boolean</p>
+					</td>
+					<td><code>true</code></td>
+				</tr>
+				<tr>
+					<td><code>label</code></td>
+					<td>
+						<p>The accessible name announced for the slideshow region. Ignored if the slideshow element already carries its own <code>aria-label</code>.</p>
+					</td>
+					<td>
+						<p>String</p>
+					</td>
+					<td><code>"Slideshow"</code></td>
+				</tr>
+				<tr>
 					<td><code>pauseOnInactiveWindow</code></td>
 					<td>
 						<p>Will pause the slideshow while the website is not in the active window.</p>
@@ -149,13 +180,28 @@
 				<tr>
 					<td><code>progressIndicators</code></td>
 					<td>
-						<p>Adds markers at the bottom of the page to show the slideshow progress.</p>
+						<p>
+							Adds dash or dot markers at the bottom of the slideshow to show progress. When <code>clickable</code> is true they are real buttons, each with an accessible name, and the active one is marked with <code>aria-current</code>. Spacing is set in CSS —
+							see <a href="#styling">Styling with CSS</a>.
+						</p>
 					</td>
 					<td>
 						<p>Object</p>
 					</td>
 					<td>
 						<code>{ <br />enable: false, <br />type: "dash", <br />clickable: true, <br />color: "#fff", <br />}</code>
+					</td>
+				</tr>
+				<tr>
+					<td><code>counter</code></td>
+					<td>
+						<p>Displays the current position, like <code>3 / 8</code>. Passing the object switches it on; <code>separator</code> sets the text placed between the two numbers.</p>
+					</td>
+					<td>
+						<p>Object</p>
+					</td>
+					<td>
+						<code>{ <br />enable: false, <br />separator: "&nbsp;/&nbsp;", <br />}</code>
 					</td>
 				</tr>
 				<tr>
@@ -241,14 +287,17 @@ export default {
 				delayStart: "delayStart: 0,",
 				delay: "delay: 1000,",
 				loop: "loop: true,",
-				randomize: "randomize: false,",
+				randomize: 'randomize: false, // or "start" / "all"',
 				paused: "paused: false,",
 				effect: 'effect: "fadeOut",',
 				buttons: "buttons: false,",
 				swipe: "swipe: true,",
 				clickToAdvance: "clickToAdvance: false,",
+				keyboard: "keyboard: true,",
+				label: 'label: "Slideshow",',
 				pauseOnInactiveWindow: "pauseOnInactiveWindow: false,",
 				progressIndicators: 'progressIndicators: { enable: false, type: "dash", clickable: true, color: "#fff" },',
+				counter: 'counter: { enable: false, separator: " / " },',
 				progressive: "progressive: 1,",
 				stackOnMobile: "stackOnMobile: { enable: false, threshold: 768 },",
 				debug: "debug: false,",
