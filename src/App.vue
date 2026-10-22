@@ -73,6 +73,24 @@ import "heartslider/dist/heartslider.min.js";'
 	...
 </div>'
 			/>
+			<p>Slides can also hold a <code>&lt;picture&gt;</code> with several sources, or a video. Use the same lazy <code>data-</code> attributes on each <code>&lt;source&gt;</code>, and HeartSlider swaps them in as the slide comes up.</p>
+			<highlightjs
+				language="xml"
+				code='<div class="heart-slide">
+	<figure class="image-holder">
+		<picture>
+			<source media="(max-width: 600px)" data-srcset="img/image-02-portrait.jpg" />
+			<img data-src="img/image-02.jpg" alt="" />
+		</picture>
+	</figure>
+</div>
+<div class="heart-slide">
+	<video muted>
+		<source data-src="video/clip.mp4" type="video/mp4" />
+		<source data-src="video/clip.webm" type="video/webm" />
+	</video>
+</div>'
+			/>
 			<p>Finally, initiate the slideshow with a new HeartSlider class and set your options in your javascript file.</p>
 			<highlightjs
 				language="javascript"
@@ -115,12 +133,14 @@ import "heartslider/dist/heartslider.min.js";'
 	counter: {
 		enable: false,
 		separator: " / ",
+		container: null, // selector or element
 	},
 	progressIndicators: {
 		enable: false,
 		type: "dash", // or "dot"
 		clickable: true,
 		color: "#fff",
+		container: null, // selector or element
 	},
 });'
 			/>
@@ -205,10 +225,6 @@ myHomepageSlideshow.on("firstImageLoad", function (slideshow, slideshowElement, 
 	},
 });'
 			/>
-			<p>
-				Anyone who has asked their system for less motion gets the slideshow without the cross-fade: slides still change on the same schedule, they just swap instantly instead of animating. This is handled in CSS via
-				<code>prefers-reduced-motion</code>, so it needs nothing from you.
-			</p>
 		</div>
 		<div class="text-block" id="styling">
 			<h3>Styling with CSS</h3>
@@ -257,6 +273,30 @@ myHomepageSlideshow.on("firstImageLoad", function (slideshow, slideshowElement, 
 			/>
 			<p><code>--total</code> is written to the indicator container by HeartSlider and holds the number of slides — useful inside your own <code>calc()</code>, as above, but treat it as read-only.</p>
 		</div>
+		<div class="text-block" id="placement">
+			<h3>Moving the Counter and Indicators</h3>
+			<p>
+				By default the counter and progress indicators sit inside the slideshow, over the slides. Give either one a <code>container</code> — a selector or an element — to put it somewhere else on the page, like a caption bar beneath the slideshow. If that container already has the
+				<code>heart-counter</code> or <code>progress-container</code> class, HeartSlider uses it as is, so you can place it exactly where you want in your markup.
+			</p>
+			<highlightjs
+				language="javascript"
+				:autodetect="false"
+				code='new HeartSlider({
+	progressIndicators: {
+		type: "dot",
+		container: "#slideshow-dots",
+	},
+	counter: {
+		container: document.querySelector(".caption .count"),
+	},
+});'
+			/>
+			<p>
+				Moved elements get a <code>heart-detached</code> class and sit in the normal flow of their new parent rather than over the slides, so style them from there. The counter is white by default, so on a light background set <code>--counter-color</code>. If the selector matches
+				nothing, HeartSlider logs a warning and keeps the element in the slideshow. <code>destroy()</code> removes the elements it created and empties any you supplied.
+			</p>
+		</div>
 		<div class="text-block table-row">
 			<h3>All Options</h3>
 			<AllOptionsTable />
@@ -273,8 +313,8 @@ export default {
 			/* Shown only if the live version lookup fails; overwritten by
 			   fetchLatestVersions() on mount. Keep in step with the newest release. */
 			versions: {
-				github: "3.6.0",
-				npm: "3.6.0",
+				github: "3.6.1",
+				npm: "3.6.1",
 			},
 		};
 	},
@@ -502,6 +542,18 @@ html {
    .text-block > p carries no bottom margin on its own. */
 .text-block > p + p {
 	margin-top: 1.2em;
+}
+/* In-page links: the color of the text around them, with a faint dotted underline */
+#docs a[href^="#"] {
+	color: inherit;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: rgba(127, 128, 132, 0.5);
+	text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+	text-underline-offset: 0.2em;
+}
+#docs a[href^="#"]:hover {
+	text-decoration-color: currentColor;
 }
 .text-block {
 	margin: 2em auto 6em;

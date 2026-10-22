@@ -47,7 +47,7 @@
 				</tr>
 				<tr>
 					<td><code>manualTransition</code></td>
-					<td><p>The duration of the fade effect during a swipe or click.</p></td>
+					<td><p>The duration of the fade effect during a swipe, click or arrow press. Quick presses are queued rather than dropped, and each queued fade overlaps the one still on screen.</p></td>
 					<td>
 						<p>Number, in milliseconds.</p>
 					</td>
@@ -182,26 +182,26 @@
 					<td>
 						<p>
 							Adds dash or dot markers at the bottom of the slideshow to show progress. When <code>clickable</code> is true they are real buttons, each with an accessible name, and the active one is marked with <code>aria-current</code>. Spacing is set in CSS —
-							see <a href="#styling">Styling with CSS</a>.
+							see <a href="#styling">Styling with CSS</a>. <code>container</code> moves them out of the slideshow — see <a href="#placement">Moving the Counter and Indicators</a>.
 						</p>
 					</td>
 					<td>
 						<p>Object</p>
 					</td>
 					<td>
-						<code>{ <br />enable: false, <br />type: "dash", <br />clickable: true, <br />color: "#fff", <br />}</code>
+						<code>{ <br />enable: false, <br />type: "dash", <br />clickable: true, <br />color: "#fff", <br />container: null, <br />}</code>
 					</td>
 				</tr>
 				<tr>
 					<td><code>counter</code></td>
 					<td>
-						<p>Displays the current position, like <code>3 / 8</code>. Passing the object switches it on; <code>separator</code> sets the text placed between the two numbers.</p>
+						<p>Displays the current position, like <code>3 / 8</code>. Passing the object switches it on; <code>separator</code> sets the text placed between the two numbers, and <code>container</code> moves it out of the slideshow — see <a href="#placement">Moving the Counter and Indicators</a>.</p>
 					</td>
 					<td>
 						<p>Object</p>
 					</td>
 					<td>
-						<code>{ <br />enable: false, <br />separator: "&nbsp;/&nbsp;", <br />}</code>
+						<code>{ <br />enable: false, <br />separator: "&nbsp;/&nbsp;", <br />container: null, <br />}</code>
 					</td>
 				</tr>
 				<tr>
@@ -296,8 +296,8 @@ export default {
 				keyboard: "keyboard: true,",
 				label: 'label: "Slideshow",',
 				pauseOnInactiveWindow: "pauseOnInactiveWindow: false,",
-				progressIndicators: 'progressIndicators: { enable: false, type: "dash", clickable: true, color: "#fff" },',
-				counter: 'counter: { enable: false, separator: " / " },',
+				progressIndicators: 'progressIndicators: { enable: false, type: "dash", clickable: true, color: "#fff", container: null },',
+				counter: 'counter: { enable: false, separator: " / ", container: null },',
 				progressive: "progressive: 1,",
 				stackOnMobile: "stackOnMobile: { enable: false, threshold: 768 },",
 				debug: "debug: false,",
